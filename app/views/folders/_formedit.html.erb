@@ -24,9 +24,14 @@
     <%= error_span(@folder[:name]) %>
   </div>
 
-
+<% @folders.each do |h| %>
+  
+     
+       <% if h.id == @folder.id %>
  <%= f.submit "Create Life", :class => 'btn btn-primary' %>
   
+<% end %>
+<% end %>
  
   
 </center>

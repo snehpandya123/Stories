@@ -12,6 +12,7 @@ class FoldersController < ApplicationController
   # GET /folders/1
   # GET /folders/1.json
   def show
+     @folders =  Folder.where(user_id: "#{current_user.id}")
     @folder = Folder.find(params[:id])
     @fol = @folder.phases
     @count = @fol.count
