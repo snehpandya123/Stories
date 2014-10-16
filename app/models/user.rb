@@ -1,8 +1,7 @@
 class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
-  before_create :set_default_roles
- 
+  
    acts_as_voter
   has_reputation :votes, source: {reputation: :votes, of: :stories}, aggregated_by: :sum
   
