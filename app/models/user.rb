@@ -38,8 +38,5 @@ def voted_for?(story)
 end
 
 
- private
-    def set_default_roles
-      self.roles = ['Default']
-    end
+ 
 end
