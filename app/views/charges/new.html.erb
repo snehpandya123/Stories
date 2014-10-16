@@ -1,0 +1,39 @@
+
+<%= form_tag charges_path do %>
+<section id="labels">
+  <div class="container">
+  <div class="row">
+        <div class="span12">
+          <div class="dl">
+            <div class="brand">
+                <h2>
+                   Contribute
+                </h2>
+            </div>
+
+            
+            <div class="discount alizarin">
+                <input type="text"  id="quantity" placeholder = "$" />&nbsp;<span id="errmsg"></span>
+                 <input type="hidden" name="amount" id = "cents" />&nbsp;<span id="errmsg"></span>
+            </div>
+            <div class="descr">
+                <strong>
+                    Best way to find yourself is to lose yourself in the service of others.
+                </strong> 
+               
+            
+            <div class="coupon midnight-blue">
+         <div id = "new">      
+        <script src="https://checkout.stripe.com/checkout.js" class="stripe-button"
+        data-key ='pk_live_HmQf3n9dUOhIP6tCtGl8FaKQ'
+        data-description="PandSoft Inc"
+        data-amount= "" ></script>
+               </div>
+            </div>
+          </div>
+        </div>
+       
+  </div>
+  </div>
+</section>
+<% end %>

@@ -1,0 +1,38 @@
+<%= form_for @folder, :html => { :class => "form-horizontal folder" } do |f| %>
+
+    <% if @folder.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@folder.errors.count, "error") %> prohibited this folder from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @folder.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+<center>
+  <div class="control-group">
+    <%= f.label :name, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :name , :class => 'form-control' %>
+      <%= f.hidden_field :user_id , :value => "#{current_user.id}" %>
+    </div>
+    <%= error_span(@folder[:name]) %>
+  </div>
+
+<% @folders.each do |h| %>
+  
+     
+       <% if h.id == @folder.id %>
+ <%= f.submit "Create Life", :class => 'btn btn-primary' %>
+  
+<% end %>
+<% end %>
+ 
+  
+</center>
+<% end %>

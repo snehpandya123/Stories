@@ -1,0 +1,158 @@
+
+<link href='http://fonts.googleapis.com/css?family=Buenard:700' rel='stylesheet' type='text/css'>
+<script src="http://pupunzi.com/mb.components/mb.YTPlayer/demo/inc/jquery.mb.YTPlayer.js"></script>
+
+<!--Video Section-->
+<section class="content-section video-section">
+  <div class="pattern-overlay">
+  <a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=fdJc1_IBKJA',containment:'.video-section', quality:'large', autoPlay:true, mute:true, opacity:1}">bg</a>
+    <div class="container">
+      <div class="row">
+       <div class="col-md-12 text-center">
+                    <h3>
+                        Share your private life "BEING UNKNOWN"</h3>
+                    <h3>
+                        Tell us about every thing happend to you..and read about others
+                    </h3>
+                    <div class="">
+                   <% if user_signed_in? %>
+                   <h3>Welcome <%= current_user.email %></h3>
+                   <p>
+                    <h3> Tell use about your <%= link_to "Life" , folders_path %> or  <%= link_to "Read", users_home_path %> about others...</h3>
+                   </p>
+                   <% else %>
+                    <%= link_to "Login" , new_user_session_path , :class => "btn btn-info btn-sm btn-min-block" %>
+                         <%= link_to "Register" , new_user_registration_path, :class => "btn btn-warning btn-sm btn-min-block" %>
+                       <% end %>
+                        </div>
+                
+                        
+                </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+    <!-- Marketing messaging and featurettes
+    ================================================== -->
+    <!-- Wrap the rest of the page in another container to center all the content. -->
+    <p id ="about" > </p>
+ <hr class="featurette-divider">
+    <div class="container marketing">
+
+      <!-- Three columns of text below the carousel -->
+         
+      
+     
+    <div class="row">
+    <div class="btn-group btn-group-justified">
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav active">
+                    
+              <h3><%= @folders.count %> Lifes..</h3>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav active">
+
+              <h3><%= @phase.count %> phases..</h3>
+                </button>
+            </div>
+            <div class="btn-group">
+                <button type="button" class="btn btn-nav active">
+                   
+              <h3><%= @stories.count %> stories..</h3>
+                </button>
+            </div>
+           
+        </div>
+  </div>
+</div><!-- End row -->
+      
+      <!-- START THE FEATURETTES -->
+
+      <hr class="featurette-divider">
+
+      <!-- /END THE FEATURETTES -->
+<div class="container">
+  <div class="row">
+        <!-- Boxes de Acoes -->
+      <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-thumbs-o-up"></i></div>
+          <div class="info">
+            <h3 class="title">Marilyn Monroe</h3>
+            <p>
+              “<b>This life</b> is what you make it. No matter what, you're going to mess up sometimes, But the good part is you get to decide how you're going to mess it up.All'll act like it anyway. But just remember, some come, some go"
+            </p>
+            
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+      
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-flag"></i></div>
+          <div class="info">
+            <h3 class="title">Charlin Chaplin</h3>
+              <p> 
+             "<b>Phases of Life</b> is a puzzle. Sometimes it makes us laugh. Sometimes it makes us cry." We deal with different events and stages in life different ways. Understand and appreciate life by reading these life quotes.
+            </p>
+            
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>
+      
+        <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-desktop"></i></div>
+          <div class="info">
+            <h3 class="title">Rabindranath Tagor</h3>
+              <p>
+              We need to know ourselves... to understand others better.
+            </p>
+           
+          </div>
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div> 
+    <div class="col-xs-12 col-sm-6 col-lg-4">
+      <div class="box">             
+        <div class="icon">
+          <div class="image"><i class="fa fa-desktop"></i></div>
+          <div class="info">
+            <h3 class="title">Ralph Waldo Emerson</h3>
+              <p>
+             It is one of the beautiful compensations of life that no man can sincerely try to help another without helping himself.
+            </p>
+           <div class="more">
+           <%= link_to "Donate >>" , new_charge_path , method: :get %>
+               
+              
+            </div>
+          </div>
+
+        </div>
+        <div class="space"></div>
+      </div> 
+    </div>             
+    <!-- /Boxes de Acoes -->
+  </div>
+</div>
+
+      <!-- FOOTER -->
+    
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    

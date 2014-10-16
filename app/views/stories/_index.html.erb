@@ -1,0 +1,36 @@
+<% @folders.each do |f| %>
+  <% f.phases.each do |p| %>
+    <% p.stories.each do |s| %>
+    <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+      <div class="offer offer-default">
+        <div class="shape">
+          <div class="shape-text">
+            Story               
+          </div>
+        </div>
+        <div class="offer-content">
+          <h3 class="lead">
+           <%= s.heading %>
+          </h3>
+          <p>
+            <%= s.describtion.truncate(18) %>
+                   <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_story_path(s), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      story_path(s),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+          </p>
+        </div>
+      </div>
+    </div>
+      
+
+    <% end %>
+  <% end %>
+<% end %>  
+<%= div_for(@stories) do %>
+  <h2><%= @stories.heading %></h2>
+  <p><%= @stories.describtion %></p>
+<% end %>

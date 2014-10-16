@@ -1,0 +1,75 @@
+<%- model_class = Story -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => "New Stories" %></h1>
+</div>
+
+  <div class="container">
+  <% @stories.each do|s| %>
+  <m id = "posts"> 
+   <n class = "page">
+    <% if s.created_at.strftime("%Y%m%d")  >= Time.now.strftime("%Y%m%d")  %>
+        <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+          <div class="offer offer-success">
+            <div class="shape">
+              <div class="shape-text">
+                New               
+              </div>
+            </div>
+          
+            <div class="offer-content">
+              <h3 class="lead">
+                <%= s.heading %>
+              </h3>
+              <p>
+                  <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s)  %> 
+              </p>
+     <% elsif s.updated_at.strftime("%Y%m%d")  >= Time.now.strftime("%Y%m%d")  %>
+               <div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+                 <div class="offer offer-primary">
+                    <div class="shape">
+                      <div class="shape-text">
+                        Edit               
+                      </div>
+                    </div>
+                
+                  <div class="offer-content">
+                    <h3 class="lead">
+                      <%= s.heading %>
+                    </h3>
+                    <p>
+                      <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s)  %> 
+                    </p>
+      <% else %>
+          <div class="col-md-3">
+            <div class="offer offer-default">
+              <div class="shape">
+                <div class="shape-text">
+                  old             
+                </div>
+              </div>
+            
+            <div class="offer-content">
+              <h3 class="lead">
+                <%= s.heading.truncate(15) %>
+              </h3>
+              <p>
+                  <%= s.describtion.truncate(20) %><%= link_to "Read more..", story_path(s)  %> 
+              </p>
+      <% end %>     
+      
+      </div>
+      </div>
+      </div>
+
+     <% end %>
+    </n>
+  </m>
+      </div>
+      </div>
+      </div>
+     <center>
+         <%= paginate @stories%>
+
+      </center>
+       
+<!-- Modal -->

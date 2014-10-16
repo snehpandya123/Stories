@@ -1,0 +1,2 @@
+$("#votes").html("<%= pluralize @story.reputation_for(:votes).to_i, "Apperiaciation" %>")
+
