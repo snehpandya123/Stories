@@ -61,15 +61,15 @@
         <% if current_user && !current_user.voted_for?(@story) %> <div class="col-md-3">
             <div class="list-group">
                <b href="" class="list-group-item visitor">
-                    <h3 class="pull-right">
+                    <h4 class="pull-right">
                      
                      <p id='votes'>
 
-         <%= pluralize @story.reputation_for(:votes).to_i, "Apperiaciation" %></p>
+         <%= pluralize @story.reputation_for(:votes).to_i, "Appreciations" %></p>
                         <h4><%= link_to '<i class="fa fa-thumbs-up"></i>
 '.html_safe, vote_story_path(@story, type: "up"), method: :post , remote: true , :class => "btn btn-sm btn-hover btn-success"%>
       <%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, vote_story_path(@story , type: "down"), method: :post,remote: true , :class => "btn btn-sm btn-hover btn-danger" %></h4>
-                    </h3>
+                    </h4>
                     <h4 class="list-group-item-heading count">
                       </h4>
                     <p class="list-group-item-text">

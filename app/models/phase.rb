@@ -5,5 +5,5 @@ class Phase < ActiveRecord::Base
 	attr_accessible :name , :folder_id , :folder_attributes
 
 	validates :name, :presence => true,
-			  :length => { :within => 1..10 }
+			  :length => { :within => 1..50 }
 end
