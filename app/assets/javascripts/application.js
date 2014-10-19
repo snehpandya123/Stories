@@ -17,6 +17,10 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
+
+
+
+
 $(document).ready(function(){
     $('#quantity').focusout(calculate);
     $('#new').hide();
