@@ -68,7 +68,11 @@
         </div>
   </div>
 </div><!-- End row -->
-      
+     <hr class="featurette-divider">
+     <% if user_signed_in? %>
+     <% else %>
+ <%= render 'about' %>
+      <% end %>
       <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">

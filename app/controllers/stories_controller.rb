@@ -1,11 +1,11 @@
 class StoriesController < ApplicationController
   before_action :set_story, only: [:show, :edit, :update, :destroy]
- before_filter :login_required, only: [:show, :new, :edit, :update, :destroy]
+  before_filter :login_required, only: [:show, :new, :edit, :update, :destroy]
   # GET /stories
   # GET /stories.json
   def index
      @folders =  Folder.where(user_id: "#{current_user.id}")
-    @stories = Story.all
+     @stories = Story.all
   end
 
   # GET /stories/1
@@ -22,7 +22,7 @@ class StoriesController < ApplicationController
   # GET /stories/1/edit
   def edit
      @folders =  Folder.where(user_id: "#{current_user.id}")
-end
+  end
 
   # POST /stories
   # POST /stories.json
