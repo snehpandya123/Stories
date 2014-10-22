@@ -95,7 +95,8 @@
       <!-- START THE FEATURETTES -->
 
       <hr class="featurette-divider">
-
+ <button type="button" class="btn btn-warning text-uppercase btn-lg">Recent stories ---<i class="fa fa-long-arrow-down"></i>
+</button>
       <!-- /END THE FEATURETTES -->
 <div class="container">
   <div class="row">
@@ -107,7 +108,7 @@
         <div class="icon">
           <div class="image"><i class="fa fa-thumbs-o-up"></i></div>
           <div class="info">
-            <h3 class="title"><%= v.heading %></h3>
+            <h3 class="title"><%= v.heading.capitalize %></h3>
             <p>
               “<%= v.describtion.truncate(100) %>"
             </p>
