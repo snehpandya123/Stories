@@ -3,6 +3,9 @@ class UsersController < ApplicationController
     @folders = Folder.all
     @phase = Phase.all
     @stories = Story.all
+    @user = User.all
+    @users = @user.count
+    @vote = Story.order(:created_at).limit(4)
   	
   end
   def home
