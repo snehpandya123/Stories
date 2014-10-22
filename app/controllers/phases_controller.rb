@@ -1,6 +1,6 @@
 class PhasesController < ApplicationController
   before_action :set_phase, only: [:show, :edit, :update, :destroy]
-before_filter :login_required, only: [:show, :new, :edit, :update, :destroy]
+  before_filter :login_required, only: [:show, :new, :edit, :update, :destroy]
   # GET /phases
   # GET /phases.json
   def index
@@ -11,11 +11,11 @@ before_filter :login_required, only: [:show, :new, :edit, :update, :destroy]
   # GET /phases/1
   # GET /phases/1.json
   def show
-    @story  = Story.new
+     @story  = Story.new
      @phase = Phase.find(params[:id])
-    @pha = @phase.stories
-    @count = @pha.count
-       @folders =  Folder.where(user_id: "#{current_user.id}")
+     @pha = @phase.stories
+     @count = @pha.count
+     @folders =  Folder.where(user_id: "#{current_user.id}")
      @stories =  Story.where(phase_id: @phase)
     
   end

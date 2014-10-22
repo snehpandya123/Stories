@@ -100,28 +100,26 @@
         color: rgb(30, 30, 30);
         background-color: rgb(200, 200, 200);
     }
-    
-
-    @media (min-width: 768px) {
+     @media (min-width: 768px) {
         .event-list > li {
-            position: relative;
-            display: block;
-            width: 100%;
-            height: 120px;
-            padding: 0px;
-        }
-        .event-list > li > time,
-        .event-list > li > img  {
-            display: inline-block;
+        position: relative;
+        display: block;
+        width: 100%;
+        height: 120px;
+        padding: 0px;
         }
         .event-list > li > time,
         .event-list > li > img {
-            width: 120px;
-            float: left;
+        display: inline-block;
+        }
+        .event-list > li > time,
+        .event-list > li > img {
+        width: 120px;
+        float: left;
         }
         .event-list > li > .info {
-            background-color: rgb(245, 245, 245);
-            overflow: hidden;
+        background-color: rgb(245, 245, 245);
+        overflow: hidden;
         }
         .event-list > li > time,
         .event-list > li > img {
@@ -135,8 +133,8 @@
             height: 120px;
             text-align: left;
             padding-right: 40px;
-        }   
-        .event-list > li > .info > .title, 
+        }
+        .event-list > li > .info > .title,
         .event-list > li > .info > .desc {
             padding: 0px 10px;
         }
@@ -145,28 +143,31 @@
             left: 0px;
             bottom: 0px;
         }
-        .event-list > li > .social {
-            position: absolute;
-            top: 0px;
-            right: 0px;
-            display: block;
-            width: 40px;
+            .event-list > li > .social {
+                position: absolute;
+                top: 0px;
+                right: 0px;
+                display: block;
+                width: 40px;
         }
-        .event-list > li > .social > ul {
-            border-left: 1px solid rgb(230, 230, 230);
+            .event-list > li > .social > ul {
+                border-left: 1px solid rgb(230, 230, 230);
         }
-        .event-list > li > .social > ul > li {          
-            display: block;
-            padding: 0px;
+            .event-list > li > .social > ul > li {
+                display: block;
+                padding: 0px;
         }
-        .event-list > li > .social > ul > li > a {
+            .event-list > li > .social > ul > li > a {
             display: block;
             width: 40px;
             padding: 10px 0px 9px;
         }
+
     }
 
-@import "http://fonts.googleapis.com/css?family=Roboto:400,500";
+
+   
+
 
 .box > .icon { text-align: center; position: relative; }
 .box > .icon > .image { position: relative; z-index: 2; margin: auto; width: 88px; height: 88px; border: 8px solid white; line-height: 88px; border-radius: 50%; background: #63B76C; vertical-align: middle; }
@@ -183,12 +184,11 @@
 .box .space { height: 30px; }
 
 body{
-	padding-top: 50px;
+    padding-top: 50px;
 }
 .video-section .pattern-overlay {
-background-color: rgba(71, 71, 71, 0.59);
 padding: 110px 0 32px;
-min-height: 600px; 
+min-height: 600px;
 /* Incase of overlay problems just increase the min-height*/
 }
 .video-section h1, .video-section h3{
@@ -213,7 +213,6 @@ margin: 0px auto 15px;
 .video-section .buttonBar{display:none;}
 .player {font-size: 1px;}
 
-
 .back-to-top {
     cursor: pointer;
     position: fixed;
@@ -229,12 +228,14 @@ margin: 0px auto 15px;
     -moz-box-sizing: border-box;    /* Firefox, other Gecko */
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
+
 .btn-nav:hover {
     color: #e92d00;
     cursor: pointer;
     -webkit-transition: color 1s; /* For Safari 3.1 to 6.0 */
     transition: color 1s;
 }
+
 .btn-nav.active {
     color: #e92d00;
     padding: 2px;
@@ -273,12 +274,12 @@ margin: 0px auto 15px;
 .btn-nav.active p {
     margin-bottom: 8px;
 }
-/*@-webkit-keyframes pulsate {
+@-webkit-keyframes pulsate {
  50% { color: #000; }
 }
 @keyframes pulsate {
  50% { color: #000; }
-}*/
+}
 @media (max-width: 480px) {
     .btn-group {
         display: block !important;
@@ -294,11 +295,11 @@ margin: 0px auto 15px;
     }
 }
 .shape{    
-	border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
-	-ms-transform:rotate(360deg); /* IE 9 */
-	-o-transform: rotate(360deg);  /* Opera 10.5 */
-	-webkit-transform:rotate(360deg); /* Safari and Chrome */
-	transform:rotate(360deg);
+    border-style: solid; border-width: 0 70px 40px 0; float:right; height: 0px; width: 0px;
+    -ms-transform:rotate(360deg); /* IE 9 */
+    -o-transform: rotate(360deg);  /* Opera 10.5 */
+    -webkit-transform:rotate(360deg); /* Safari and Chrome */
+    transform:rotate(360deg);
 }
 .shape-left{    
     border-style: solid; border-width: 0 70px 40px 0; float:left; height: 0px; width: 0px;
@@ -308,7 +309,7 @@ margin: 0px auto 15px;
     transform:rotate(360deg);
 }
 .offer{
-	background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
+    background:#fff; border:1px solid #ddd; box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); margin: 15px 0; overflow:hidden;
 }
 .offer:hover {
     -webkit-transform: scale(1.1); 
@@ -317,48 +318,48 @@ margin: 0px auto 15px;
     -o-transform: scale(1.1); 
     transform:rotate scale(1.1); 
     -webkit-transition: all 0.4s ease-in-out; 
--moz-transition: all 0.4s ease-in-out; 
--o-transition: all 0.4s ease-in-out;
-transition: all 0.4s ease-in-out;
-    }
+    -moz-transition: all 0.4s ease-in-out; 
+    -o-transition: all 0.4s ease-in-out;
+    transition: all 0.4s ease-in-out;
+}
 .shape {
-	border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
+    border-color: rgba(255,255,255,0) #d9534f rgba(255,255,255,0) rgba(255,255,255,0);
 }
 .offer-radius{
-	border-radius:7px;
+    border-radius:7px;
 }
-.offer-danger {	border-color: #d9534f; }
+.offer-danger { border-color: #d9534f; }
 .offer-danger .shape{
-	border-color: transparent #d9534f transparent transparent;
+    border-color: transparent #d9534f transparent transparent;
 }
-.offer-success {	border-color: #5cb85c; }
+.offer-success {    border-color: #5cb85c; }
 .offer-success .shape{
-	border-color: transparent #5cb85c transparent transparent;
+    border-color: transparent #5cb85c transparent transparent;
 }
-.offer-default {	border-color: #999999; }
+.offer-default {    border-color: #999999; }
 .offer-default .shape{
-	border-color: transparent #999999 transparent transparent;
+    border-color: transparent #999999 transparent transparent;
 }
-.offer-primary {	border-color: #428bca; }
+.offer-primary {    border-color: #428bca; }
 .offer-primary .shape{
-	border-color: transparent #428bca transparent transparent;
+    border-color: transparent #428bca transparent transparent;
 }
-.offer-info {	border-color: #5bc0de; }
+.offer-info {   border-color: #5bc0de; }
 .offer-info .shape{
-	border-color: transparent #5bc0de transparent transparent;
+    border-color: transparent #5bc0de transparent transparent;
 }
-.offer-warning {	border-color: #f0ad4e; }
+.offer-warning {    border-color: #f0ad4e; }
 .offer-warning .shape{
-	border-color: transparent #f0ad4e transparent transparent;
+    border-color: transparent #f0ad4e transparent transparent;
 }
 
 .shape-text{
-	color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
-	-ms-transform:rotate(30deg); /* IE 9 */
-	-o-transform: rotate(360deg);  /* Opera 10.5 */
-	-webkit-transform:rotate(30deg); /* Safari and Chrome */
-	transform:rotate(30deg);
-}	
+    color:#fff; font-size:12px; font-weight:bold; position:relative; right:-40px; top:2px; white-space: nowrap;
+    -ms-transform:rotate(30deg); /* IE 9 */
+    -o-transform: rotate(360deg);  /* Opera 10.5 */
+    -webkit-transform:rotate(30deg); /* Safari and Chrome */
+    transform:rotate(30deg);
+}   
 .shape-text-left{
     color:#fff; font-size:12px; font-weight:bold; position:relative; left:-40px; bottom:2px; white-space: nowrap;
     -ms-transform:rotate(30deg); /* IE 9 */
@@ -367,7 +368,7 @@ transition: all 0.4s ease-in-out;
     transform:rotate(30deg);
 }   
 .offer-content{
-	padding:0 20px 10px;
+    padding:0 20px 10px;
 }
 @media (min-width: 487px) {
   .container {
@@ -403,7 +404,7 @@ transition: all 0.4s ease-in-out;
     width: 25%;
   }
  }
-}
+
 section {
     padding: 5% 0;
 }
