@@ -12,7 +12,7 @@
           
             <div class="offer-content">
               <h3 class="lead">
-                <%= s.heading %>
+                <%= s.heading.capitalize %>
               </h3>
               <p>
                   <%= s.describtion.truncate(60) %><%= link_to "Read more..", story_path(s)  %> 
@@ -28,7 +28,7 @@
                 
                   <div class="offer-content">
                     <h3 class="lead">
-                      <%= s.heading %>
+                      <%= s.heading.capitalize%>
                     </h3>
                     <p>
                       <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s)  %> 
@@ -44,7 +44,7 @@
             
             <div class="offer-content">
               <h3 class="lead">
-                <%= s.heading.truncate(15) %>
+                <%= s.heading.truncate(15).capitalize %>
               </h3>
               <p>
                   <%= s.describtion.truncate(15) %><%= link_to "Read more..", story_path(s)  %> 

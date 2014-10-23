@@ -69,7 +69,9 @@ class StoriesController < ApplicationController
   def vote
     value = params[:type] == "up" ? 1 : -1
     @story = Story.find(params[:id])
-    @story.add_or_update_evaluation(:votes, value, current_user)
+    @story.add_or_update_evaluation(:votes, value, current_user) 
+    @user = User.find_by_id(Folder.find_by_id(Phase.find_by_id(@story.phase_id).folder_id).user_id)
+    Appmailer.appriciation(@user).deliver
    end
 
 
