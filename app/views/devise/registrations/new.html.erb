@@ -106,6 +106,10 @@
         'Thanks for logging in, ' + response.name + '!';
     });
   }
+   FB.Event.subscribe('auth.login', function(response) {
+        alert("Logged in.. Redirecting you now...");
+         window.location = "http://www.pandsoft.com/users/home";
+    });
 </script>
 
 <!--
