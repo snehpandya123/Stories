@@ -85,3 +85,4 @@ $(function() {
     });
 });
 //= require jquery.infinitescroll
+//= require jquery.infinitescroll

@@ -1,0 +1,57 @@
+<div class = "storiess">
+ <% @stories.each do|s| %>
+<% if s.created_at.strftime("%Y%m%d")  >= Time.now.strftime("%Y%m%d")  %>
+        <div class="col-md-6">
+          <div class="offer offer-success">
+            <div class="shape">
+              <div class="shape-text">
+                New               
+              </div>
+            </div>
+          
+            <div class="offer-content">
+              <h3 class="lead">
+                <%= s.heading.capitalize %>
+              </h3>
+              <p>
+                  <%= s.describtion.truncate(60) %><%= link_to "Read more..", story_path(s)  %> 
+              </p>
+     <% elsif s.updated_at.strftime("%Y%m%d")  >= Time.now.strftime("%Y%m%d")  %>
+               <div class="col-md-6">
+                 <div class="offer offer-primary">
+                    <div class="shape">
+                      <div class="shape-text">
+                        Edit               
+                      </div>
+                    </div>
+                
+                  <div class="offer-content">
+                    <h3 class="lead">
+                      <%= s.heading.capitalize%>
+                    </h3>
+                    <p>
+                      <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s)  %> 
+                    </p>
+      <% else %>
+          <div class="col-md-3">
+            <div class="offer offer-default">
+              <div class="shape">
+                <div class="shape-text">
+                  old             
+                </div>
+              </div>
+            
+            <div class="offer-content">
+              <h3 class="lead">
+                <%= s.heading.truncate(15).capitalize %>
+              </h3>
+              <p>
+                  <%= s.describtion.truncate(15) %><%= link_to "Read more..", story_path(s)  %> 
+              </p>
+      <% end %>     
+      
+      </div>
+      </div>
+      </div>
+        <% end %>
+      </div>

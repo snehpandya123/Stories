@@ -31,7 +31,7 @@
               <ul class="nav navbar-nav">
                 
                 <% if signed_in? %>
-                <li><%= link_to "Stories" , users_home_path %></li>
+                <li><%= link_to "Stories" , users_home_path , method: :get %></li>
                 <li><%= link_to "My Life" , folders_path %></li>
                
                 <li><%= link_to "Contribute" , new_charge_path , :method => :get %></li>
