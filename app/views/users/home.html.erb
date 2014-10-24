@@ -1,21 +1,36 @@
 <div class="main-header1">
- <div class="container">
-   
-      <div class = "story">
 
-        <div class = "stories">
-        <%= render "stories" %>
+<% if current_user.folders.empty? %>
+        <%= render "folder" %>
+ <% else %>
+  <% current_user.folders.each do |f| %>
+    <% if f.phases.empty? %>
+     <%= render "phase" %>
+     <% else %>
+      <% f.phases.each do|s| %>
+        <% if s.stories.empty? %>
+        <%= render "story" %>
+        <% else %>
+        <div class="container">
+   <div class = "story">
+      <div class = "stories">
+          <%= render "stories" %>
       </div>
-      </div>
-   
+    </div>
+  </div>
+</div>
+</div>
+<% end %>
+        <% end %>
+     <% end %>
+  <% end %>
+<% end %> 
+
+ <center>
+  <%= paginate @stories%>
+</center>
+</div>
+        
  
-      </div>
-      </div>
-      </div>
-     <center>
-         <%= paginate @stories%>
-
-      </center>
-      </div>
-       
+     
 <!-- Modal -->
