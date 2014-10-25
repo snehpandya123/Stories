@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :comments
+
   get 'homes/show'
 resources :homes, only: [:show]
 

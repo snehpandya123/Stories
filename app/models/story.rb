@@ -1,5 +1,6 @@
 class Story < ActiveRecord::Base
 	belongs_to :phase
+	has_many :comments
 	  has_reputation :votes, source: :user, aggregated_by: :sum
 	attr_accessible :describtion ,:heading, :phase_id , :phase_attributes
 	acts_as_votable

@@ -5,4 +5,13 @@ class Appmailer < ActionMailer::Base
   	
 	 mail(:to => @mail, :subject => "Your Story is Appericiated" )
   end
+
+  
+ def comment(user)
+  	 @mail = user.email
+  	
+	 mail(:to => @mail, :subject => "New Suggession on your Story" )
+  end
+
+
 end
