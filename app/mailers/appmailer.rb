@@ -14,9 +14,12 @@ class Appmailer < ActionMailer::Base
   end
 
 def invite(user)
-  user.each do |user|
-   mail(to: user.email, subject: 'How to feel in Pandsoft')
- end
+  @user = user.all
+  emails = @user.map {|user| user.email}
+
+  
+   mail(to: emails, subject: 'How to feel in Pandsoft')
+ 
 end
 
 end

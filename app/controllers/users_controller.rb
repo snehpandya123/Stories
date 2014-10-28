@@ -23,7 +23,7 @@ class UsersController < ApplicationController
   def invite
     @user = User.all
     Appmailer.invite(@user).deliver
-   
+
   end
 
 end
