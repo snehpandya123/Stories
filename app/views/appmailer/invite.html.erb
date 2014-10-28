@@ -6,17 +6,18 @@
                 <div class="board">
                     <!-- <h2>Welcome to IGHALO!<sup>™</sup></h2>-->
                     <div class="board-inner" style="background: #fafafa url(http://subtlepatterns.com/patterns/geometry2.png);background-size: 30%;">
-                          <h3  style="font-family: 'Roboto Condensed', sans-serif;font-size: 20px;text-transform: uppercase;padding-bottom: 10px;">Welcome <%= @email %>!<sup>™</sup> <span style="color:#f48260;">♥</span>
+                          <h3  style="font-family: 'Roboto Condensed', sans-serif;font-size: 20px;text-transform: uppercase;padding-bottom: 10px;">Share on PandSoft<sup>™</sup> <span style="color:#f48260;">♥</span>
                           </h3>
-                         <p>You can confirm your account email through the link below:</p>
-
+                          <p style="width: 100%;margin: 10px auto;">
+                              Hello, member we wish that you share you private story, and you 
+                              can also ready every one else.
+                          </p>
                           <div>
                             
                           </div>
                           <div>
                           <p class="text-center">
-                          <p><%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token), :style=> "padding: 12px 20px;margin: 20px 0;border: 2px solid transparent;border-radius: 25px;background-color: #5cb85c;color: #ffffff;" %></p>
-                   
+                    <a href="http://www.pandsoft.com/folders" class="btn btn-success btn-outline-rounded green" style="padding: 12px 20px;margin: 20px 0;border: 2px solid transparent;border-radius: 25px;background-color: #5cb85c;color: #ffffff;"> start writing stories <span style="margin-left:10px;" class="glyphicon glyphicon-send"></span></a>
                 </p>
                      
                     </div>
@@ -26,7 +27,7 @@
                <div class="text-center">
                 <i class="img-intro icon-checkmark-circle"></i>
                           </div>
-                              <h3 class="narrow text-center" style="font-family: 'Roboto Condensed', sans-serif;font-size: 20px;text-transform: uppercase;padding-bottom: 10px;">Thanks for staying tuned! <span style="color:#f48260;">♥</span>Pandsoft</h3>
+                              <h3 class="narrow text-center" style="font-family: 'Roboto Condensed', sans-serif;font-size: 20px;text-transform: uppercase;padding-bottom: 10px;">thanks for staying tuned! <span style="color:#f48260;">♥</span>Pandsoft</h3>
                             <p  style="width: 100%;margin: 10px auto;">
                        A place where you can share you private life being unknown, and can read different stories.
                           </p>
@@ -42,13 +43,3 @@
 </section>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-

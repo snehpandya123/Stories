@@ -14,6 +14,7 @@
 //= require jquery.infinitescroll
 //= require jquery_ujs
 //= require twitter/bootstrap
+
 //= require social-share-button
 //= require turbolinks
 //= require_tree .

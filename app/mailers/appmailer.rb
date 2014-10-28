@@ -13,5 +13,10 @@ class Appmailer < ActionMailer::Base
 	 mail(:to => @mail, :subject => "New Suggession on your Story" )
   end
 
+def invite(user)
+  user.each do |user|
+   mail(to: user.email, subject: 'How to feel in Pandsoft')
+ end
+end
 
 end

@@ -8,6 +8,7 @@ class User < ActiveRecord::Base
   has_many :folders
   has_many :phases, through: :folders
   has_many :stories, through: :phases
+  has_many :comments , through: :stories
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable ,:confirmable, :lockable, :timeoutable, :omniauthable  ,:omniauth_providers => [:facebook]
 

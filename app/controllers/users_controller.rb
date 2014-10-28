@@ -20,5 +20,10 @@ class UsersController < ApplicationController
   def mystories
   	@folders =  Folder.where(user_id: "#{current_user.id}")
   end
+  def invite
+    @user = User.all
+    Appmailer.invite(@user).deliver
+   
+  end
 
 end

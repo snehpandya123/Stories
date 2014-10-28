@@ -1,6 +1,6 @@
 class FoldersController < ApplicationController
   before_action :set_folder, only: [:show, :edit, :update, :destroy]
-   before_filter :login_required, only: [:show, :new, :edit, :update, :destroy]
+   before_filter :login_required, only: [:show, :new, :edit, :update, :destroy , :index]
   # GET /folders
   # GET /folders.json
   def index

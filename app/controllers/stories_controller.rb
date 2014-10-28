@@ -64,7 +64,7 @@ class StoriesController < ApplicationController
     @story.destroy
     respond_to do |format|
       flash[:error] = 'Story was successfully destroyed.'
-      format.html { redirect_to stories_url }
+      format.html { redirect_to folders_path }
       format.json { head :no_content }
     end
   end

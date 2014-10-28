@@ -18,6 +18,8 @@ gem 'twitter-bootstrap-rails'
 gem 'social-share-button'
 gem 'acts_as_votable', '~> 0.10.0'
 gem 'cancan'
+
+
 gem 'activerecord-reputation-system', :require => 'reputation_system'
 # Use SCSS for stylesheets
 gem 'less-rails-bootstrap'
