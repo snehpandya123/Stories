@@ -24,8 +24,12 @@ resources :homes, only: [:show]
   get 'users/mystories'
   get 'users/invite'
    get 'users/invitep'
+   get 'users/show'
     get 'users/invites'
-
+    get 'users/all'
+    
+    post 'users/:id' => 'users#destroy'
+get 'users/:id' => 'users#show' ,:as => 'user'
   
   
   root :to => "users#dashboard"

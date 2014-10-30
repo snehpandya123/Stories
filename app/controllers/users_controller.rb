@@ -38,4 +38,18 @@ class UsersController < ApplicationController
                 end
           end
   end  
+  def all
+      @user = User.all
+  end
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+   
+      flash[:success] = 'User was successfully destroyed.'
+      redirect_to (:back)
+      
+  end
+  def show
+    @user = User.find(params[:id])
+  end
 end

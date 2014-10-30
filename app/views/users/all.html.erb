@@ -1,0 +1,21 @@
+<div class="container">
+<% if current_user.email == 'sapandya92@yahoo.co.in' %>
+<table class="table table-bordred table-striped">
+<% @user.each do |u| %>
+<tr>
+	<td>
+		<%= u.email %>
+	</td>
+	<td>
+		<%= link_to "Show", u, :class => "btn btn-primary" ,:method => :get %>
+	</td>
+	<td>
+		<%= link_to "Remove", user_path(u),method: :delete, :class => "btn btn-danger" ,data: { confirm: "Are you sure?" } %>
+	</td>
+</tr>
+<% end %>
+</table>
+<%else %>
+not authorize
+<% end %>
+</div>
