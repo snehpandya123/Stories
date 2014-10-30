@@ -21,9 +21,21 @@ class UsersController < ApplicationController
   	@folders =  Folder.where(user_id: "#{current_user.id}")
   end
   def invite
-    @user = User.all
-    Appmailer.invite(@user).deliver
-
-  end
-
+     @user = User.all
+        @user.each do |u|
+            if u.folders.empty?
+                Appmailer.invite(u).deliver
+            end  
+                u.folders.each do |p|
+                    if p.phases.empty?
+                        Appmailer.invitep(u).deliver
+                    end
+                p.phases.each do |s|
+                      if s.stories.empty?
+                        Appmailer.invites(u).deliver
+                      end
+                  end 
+                end
+          end
+  end  
 end

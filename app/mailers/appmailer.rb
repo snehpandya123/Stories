@@ -13,12 +13,19 @@ class Appmailer < ActionMailer::Base
 	 mail(:to => @mail, :subject => "New Suggession on your Story" )
   end
 
-def invite(user)
-  @user = user.all
-  emails = @user.map {|user| user.email}
-
-  
-   mail(to: emails, subject: 'How to feel in Pandsoft')
+def invite(u)
+  @user = u
+ mail(to: @user.email, subject: 'Create you life at pandsoft')
+ 
+end
+def invitep(u)
+  @user = u
+ mail(to: @user.email, subject: 'Add you Phase of life')
+ 
+end
+def invites(u)
+  @user = u
+ mail(to: @user.email, subject: 'Add you private story')
  
 end
 

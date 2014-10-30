@@ -14,7 +14,10 @@
                               <%= s.heading.capitalize %>
                             </h3>
                                 <p>
-                                  <%= s.describtion.truncate(60) %><%= link_to "Read more..", story_path(s)  %> 
+                                  <%= s.describtion.truncate(60) %><%= link_to "Read more..", story_path(s),class: "tag-tooltip",
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Read full story",
+                    'data-placement' => 'right'  %> 
                                 </p>
         <% elsif s.updated_at.strftime("%Y%m%d")  >= Time.now.strftime("%Y%m%d")  %>
                 
@@ -31,7 +34,10 @@
                                 <%= s.heading.capitalize%>
                             </h3>
                               <p>
-                                <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s)  %> 
+                                <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s) ,class: "tag-tooltip",
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Read full story",
+                    'data-placement' => 'right' %> 
                               </p>
         <% else %>
             
@@ -48,7 +54,10 @@
                           <%= s.heading.truncate(15).capitalize %>
                         </h3>
                         <p>
-                          <%= s.describtion.truncate(15) %><%= link_to "Read more..", story_path(s)  %> 
+                          <%= s.describtion.truncate(15) %><%= link_to "Read more..", story_path(s) ,class: "tag-tooltip",
+                    :data => {:toggle=>"tooltip"},
+                    'data-original-title' => "Read full story",
+                    'data-placement' => 'right' %> 
                         </p>
         <% end %>     
       

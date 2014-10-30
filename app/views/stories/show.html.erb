@@ -85,36 +85,12 @@
         
             <h3><%= @story.describtion.capitalize %></h3>
             
-            <div class="pull-right">
-                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal">Give Suggestion</button>
-                    </div>
+           
       </div> 
-                <%= social_share_button_tag("#{@story.heading}" , :url => "http://www.pandsoft.com/stories/#{@story.id}") %> 
+                <!--<%= social_share_button_tag("#{@story.heading}" , :url => "http://www.pandsoft.com/stories/#{@story.id}") %>  -->
             
             </div>
-            
-                
-
- 
-
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
-        <h4 class="modal-title" id="myModalLabel">Add Suggestion</h4>
-      </div>
-      <div class="modal-body">
-        <%= render 'comments/form' %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
- <!--  <div class="well">    
+             <div class="well">    
    <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
     var disqus_shortname = 'pandsoft'; // required: replace example with your forum shortname
@@ -143,58 +119,9 @@
     <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
     
 
-  </div>    --> 
+  </div>    
 
-<div class="container">
-  <div class="row">
-    <h3 style ="color:white;">Comments</h3>
-  </div>
-    <div class="qa-message-list" id="wallmessages">
-    <% @comments.each do |comment| %>
-            <div class="message-item">
-            <div class="message-inner">
-              <div class="message-head clearfix">
-                <div class="avatar pull-left"><a href="#"><img src="https://ssl.gstatic.com/accounts/ui/avatar_2x.png"></a></div>
-                <div class="user-detail">
-                  <h5 class="handle"></h5>
-                  <div class="post-meta">
-                    <div class="asker-meta">
-                      <span class="qa-message-what"></span>
-                      <span class="qa-message-when">
-                        <span class="qa-message-when-data"><%= comment.created_at %></span>
-                      </span>
-                      <span class="qa-message-who">
-                        <span class="qa-message-who-pad"></span>
-                        <span class="qa-message-who-data"><a href="./index.php?qa=user&qa_1=Oleg+Kolesnichenko"></a></span>
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="qa-message-content">
-              
-               <%= comment.body %>
-              
-              </div>
-              
-          </div></div>
-          <% end %>
-
-         
-          
-        
-          
-    
-        
-        
-         
-          
-        </div>
 </div>
-
-
-
-            </div>
 
 
 </div>

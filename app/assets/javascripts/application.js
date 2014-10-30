@@ -18,6 +18,9 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
+$(document).on("ready page:change", function() {
+    $('.tag-tooltip').tooltip();
+});
 $(function(){
 $('a[title]').tooltip();
 });

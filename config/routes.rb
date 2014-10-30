@@ -23,6 +23,8 @@ resources :homes, only: [:show]
   get 'users/myphase'
   get 'users/mystories'
   get 'users/invite'
+   get 'users/invitep'
+    get 'users/invites'
 
   
   
