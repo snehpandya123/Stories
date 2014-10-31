@@ -7,10 +7,10 @@
 		<%= u.email %>
 	</td>
 	<td>
-		<%= link_to "Show", u, :class => "btn btn-primary" ,:method => :get %>
+		<%= link_to "remove", u, :class => "btn btn-danger" ,:method => :get %>
 	</td>
 	<td>
-		<%= link_to "Remove", user_path(u),method: :delete, :class => "btn btn-danger" ,data: { confirm: "Are you sure?" } %>
+		
 	</td>
 </tr>
 <% end %>

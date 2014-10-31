@@ -27,8 +27,9 @@ resources :homes, only: [:show]
    get 'users/show'
     get 'users/invites'
     get 'users/all'
+    get 'users/destroy'
     
-    post 'users/:id' => 'users#destroy'
+    get 'users/:id' => 'users#destroy'
 get 'users/:id' => 'users#show' ,:as => 'user'
   
   
