@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-   before_filter :login_required, only: [:show, :new, :edit, :update, :destroy , :home , :dashboard]
+   before_filter :login_required, only: [:show, :new, :edit, :update, :destroy , :home ]
   def dashboard
     @folders = Folder.all
     @phase = Phase.all
