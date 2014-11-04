@@ -12,7 +12,7 @@
                     <h3>
                         Share your private life "BEING UNKNOWN"</h3>
                     <h3>
-                        Tell us about every thing happend to you..and read about others
+                        Tell us about every thing happened to you..and read about others
                     </h3>
                     <div class="">
                    <% if user_signed_in? %>
@@ -88,8 +88,9 @@
 </div><!-- End row -->
      <hr class="featurette-divider">
      <% if user_signed_in? %>
+     <%= render 'about' %>
      <% else %>
- <%= render 'about' %>
+ 
       <% end %>
       <!-- START THE FEATURETTES -->
 

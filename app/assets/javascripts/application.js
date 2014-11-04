@@ -40,7 +40,7 @@ $(document).ready(function() {
 
 $(document).ready(function(){
     $('#quantity').focusout(calculate);
-    $('#new').hide();
+    
     
 });
 function calculate(e)

@@ -24,7 +24,13 @@
         </div>
         <div class="offer-content">
           <h3 class="lead">
-            Name of your life
+          <% if current_user.folders.exists? %>
+            <% current_user.folders.each do |r|%>
+                <%= r.name %>
+                <% end %>
+            <% else %>
+            <%= link_to "Enter name of your life" , new_folder_path %>
+            <% end %>
           </h3>
           <p>
                           

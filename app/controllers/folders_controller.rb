@@ -37,7 +37,7 @@ class FoldersController < ApplicationController
 
     respond_to do |format|
       if @folder.save
-        flash[:success] = 'Folder was successfully created.'
+        flash[:success] = 'Life was successfully created.'
         format.html { redirect_to folders_path }
         format.json { render :index, status: :created, location: @folder }
       else
@@ -52,7 +52,7 @@ class FoldersController < ApplicationController
   def update
     respond_to do |format|
       if @folder.update(folder_params)
-        flash[:success] = 'Folder was successfully updated.'
+        flash[:success] = 'Life was successfully updated.'
         format.html { redirect_to @folder }
         format.json { render :show, status: :ok, location: @folder }
       else

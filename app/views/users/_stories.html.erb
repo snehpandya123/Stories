@@ -14,7 +14,7 @@
                               <%= s.heading.capitalize %>
                             </h3>
                                 <p>
-                                  <%= s.describtion.truncate(60) %><%= link_to "Read more..", story_path(s),class: "tag-tooltip",
+                                  <%= s.describtion.truncate(60) %><%= link_to "More..", story_path(s),class: "tag-tooltip",
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Read full story",
                     'data-placement' => 'right'  %> 
@@ -34,7 +34,7 @@
                                 <%= s.heading.capitalize%>
                             </h3>
                               <p>
-                                <%= s.describtion.truncate(75) %><%= link_to "Read more..", story_path(s) ,class: "tag-tooltip",
+                                <%= s.describtion.truncate(75) %><%= link_to "More..", story_path(s) ,class: "tag-tooltip",
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Read full story",
                     'data-placement' => 'right' %> 
@@ -54,7 +54,7 @@
                           <%= s.heading.truncate(15).capitalize %>
                         </h3>
                         <p>
-                          <%= s.describtion.truncate(15) %><%= link_to "Read more..", story_path(s) ,class: "tag-tooltip",
+                          <%= s.describtion.truncate(15) %><%= link_to "More..", story_path(s) ,class: "tag-tooltip",
                     :data => {:toggle=>"tooltip"},
                     'data-original-title' => "Read full story",
                     'data-placement' => 'right' %> 

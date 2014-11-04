@@ -1,16 +1,13 @@
 <div class="main-header1">
 
-    <% if current_user.folders.empty? %>
-      
-              <%= render "folder" %>
-  
+    <% if current_user.folders.empty? %>  
+        <%= render "folder" %>
     <% else %>
     
     <% current_user.folders.each do |f| %>
-        
           <% if f.phases.empty? %>
           
-                <%= render "phase" %>
+          <%= render "phase" %>
       
           <% else %>
             
@@ -21,8 +18,8 @@
              <% end %>
 
            <% end %>
-      <% end %>
-    <% end %> 
+        <% end %>
+      <% end %> 
     <% end %>
                 <div class="container">
                     <div class = "story">
