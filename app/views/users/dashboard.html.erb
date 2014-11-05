@@ -21,9 +21,13 @@
                     <h3> Tell us about your <%= link_to "Life" , folders_path %> or  <%= link_to "Read", users_home_path %> about others...</h3>
                    </p>
                    <% else %>
-                    <%= link_to "Login" , new_user_session_path , :class => "btn btn-info btn-sm btn-min-block" %>
+                   
+                   <button type="button" class="btn btn-primary" href="#signup" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Register</button>
+                   <!-- <%= link_to "Login" , new_user_session_path , :class => "btn btn-info btn-sm btn-min-block" %>
                          <%= link_to "Register" , new_user_registration_path, :class => "btn btn-warning btn-sm btn-min-block" %>
-                       <% end %>
+                         -->
+                       <% end %> 
+                      
                         </div>
                 
                         
@@ -32,6 +36,69 @@
     </div>
   </div>
 </section>
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+        <br>
+        <div class="bs-example bs-example-tabs">
+            <ul id="myTab" class="nav nav-tabs">
+
+              <li class="active"><a href="#signin" data-toggle="tab"><span class="round-tabs one">
+                                  <i class="fa fa-sign-in"></i>Signin
+                            </span>  </a></li>
+                         <li class=""></li>
+              <li class=""><a href="#signup" data-toggle="tab"> <span class="round-tabs two">
+                                  <i class="fa fa-user"></i>Signup
+                            </span>   </a></li>
+              <li class=""><a href="#why" data-toggle="tab"> <span class="round-tabs three">
+                                  <i class="fa fa-question"></i>Why..
+                            </span></a></li>
+            </ul>
+        </div>
+      <div class="modal-body">
+        <div id="myTabContent" class="tab-content">
+        <div class="tab-pane fade in" id="why">
+        <p>We need this information so that you can receive access to the site and its content. Rest assured your information will not be sold, traded, or given to anyone.</p>
+        <p></p><br> Please contact <a mailto:href="teampandsoft@gmail.com"></a>teampandsoft@gmail.com</a> for any other inquiries.</p>
+        </div>
+        <div class="tab-pane fade active in" id="signin">
+         <%= form_for(:user, :url => session_path(:user)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true , :class => "form-control" %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" , :class => "form-control" %></div>
+
+  
+
+  <div><%= f.submit "Sign in" , :class => "btn btn-success" %></div>
+<% end %>
+
+        </div>
+        <div class="tab-pane fade" id="signup">
+            <%= form_for(:user, :url => registration_path(:user)) do |f| %>
+  <div><%= f.label :email %><br />
+  <%= f.email_field :email, autofocus: true ,:class => "form-control"  %></div>
+
+  <div><%= f.label :password %><br />
+    <%= f.password_field :password, autocomplete: "off" , :class => "form-control"  %></div>
+
+  <div><%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" , :class => "form-control" %></div>
+
+  <div><%= f.submit "Sign up" , :class=> "btn btn-warning"%></div>
+  <% end %>
+      </div>
+    </div>
+      </div>
+      <div class="modal-footer">
+      <center>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </center>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Marketing messaging and featurettes
     ================================================== -->
@@ -48,7 +115,7 @@
         <div class="btn-group btn-group-justified">
           <div class="btn-group">               
              <button type="button" class="btn btn-nav active">
-                    <h3><%= @users %> Users..</h3>
+                    <h3><%= @userss %> Users..</h3>
                 </button>
             </div>
             <div class="btn-group">
@@ -151,6 +218,7 @@
     <!-- /Boxes de Acoes -->
   </div>
 </div>
+
 
       <!-- FOOTER -->
     

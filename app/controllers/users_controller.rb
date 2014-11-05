@@ -4,13 +4,15 @@ class UsersController < ApplicationController
     @folders = Folder.all
     @phase = Phase.all
     @stories = Story.all
-    @user = User.all
-    @users = @user.count
+    @users = User.all
+    @user = User.new
+    @userss = @users.count
     @vote = Story.order("created_at desc").limit(4)
   	
   end
   def home
   	 @stories = Story.order('created_at desc').page(params[:page])
+    
  
  
   end
