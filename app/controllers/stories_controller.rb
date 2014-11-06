@@ -34,7 +34,7 @@ class StoriesController < ApplicationController
     respond_to do |format|
       if @story.save
         flash[:success] = 'Story was successfully created.'
-        format.html { redirect_to folders_path }
+        format.html { redirect_to (:back) }
         format.json { render :show, status: :created, location: @story }
       else
         format.html { render :new }
@@ -72,8 +72,8 @@ class StoriesController < ApplicationController
     value = params[:type] == "up" ? 1 : -1
     @story = Story.find(params[:id])
     @story.add_or_update_evaluation(:votes, value, current_user) 
-    @user = User.find_by_id(Folder.find_by_id(Phase.find_by_id(@story.phase_id).folder_id).user_id)
-    Appmailer.appriciation(@user).deliver
+    #@user = User.find_by_id(Folder.find_by_id(Phase.find_by_id(@story.phase_id).folder_id).user_id)
+    #Appmailer.appriciation(@user).deliver
    end
 
 

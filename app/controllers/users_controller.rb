@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @folders = Folder.all
     @phase = Phase.all
     @stories = Story.all
+    @story = Story.new
     @users = User.all
     @user = User.new
     @userss = @users.count

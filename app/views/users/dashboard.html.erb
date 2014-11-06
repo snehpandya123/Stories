@@ -22,7 +22,10 @@
                    </p>
                    <% else %>
                    
-                   <button type="button" class="btn btn-primary" href="#signup" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Register</button>
+                   <button type="button" class="btn btn-primary btn-lg" href="#signup" data-toggle="modal" data-target=".bs-example-modal-lg">Signin/Register</button>
+                   <button type="button" class="btn btn-warning btn-lg" data-toggle="modal" data-target="#myModal">
+  Write Anonymous
+</button>
                    <!-- <%= link_to "Login" , new_user_session_path , :class => "btn btn-info btn-sm btn-min-block" %>
                          <%= link_to "Register" , new_user_registration_path, :class => "btn btn-warning btn-sm btn-min-block" %>
                          -->
@@ -36,6 +39,31 @@
     </div>
   </div>
 </section>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">Write your story</h4>
+      </div>
+      <div class="modal-body">
+        <div class="alert alert-danger" >
+             <button type="button" class="close" data-dismiss="alert">
+  <span aria-hidden="true">&times;</span>
+  <span class="sr-only">Close</span>
+</button>
+              There will be no track of your story, <%= link_to "Register" , new_user_registration_path , :class => "btn btn-success" %> to Create your life -> Phase -> Stories
+        </div>
+
+       <%= render "stories/form1" %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+       
+      </div>
+    </div>
+  </div>
+</div>
 <div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
