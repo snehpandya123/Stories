@@ -8,6 +8,7 @@ gem 'pg'
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
+gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 gem 'rails_12factor', group: :production
 gem 'protected_attributes'
 gem 'jquery-turbolinks'

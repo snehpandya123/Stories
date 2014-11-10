@@ -1,4 +1,12 @@
 GIT
+  remote: git://github.com/arunagw/omniauth-twitter.git
+  revision: f821239c9691ab7ebfad7de7224452f325ac96bd
+  specs:
+    omniauth-twitter (1.1.0)
+      multi_json (~> 1.3)
+      omniauth-oauth (~> 1.0)
+
+GIT
   remote: https://github.com/stripe/stripe-ruby
   revision: 2c6f4caa99916c33d3f9af57f66422ff5ea913cf
   specs:
@@ -99,6 +107,7 @@ GEM
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     netrc (0.7.7)
+    oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
       jwt (~> 1.0)
@@ -110,6 +119,9 @@ GEM
       rack (~> 1.0)
     omniauth-facebook (2.0.0)
       omniauth-oauth2 (~> 1.2)
+    omniauth-oauth (1.0.1)
+      oauth
+      omniauth (~> 1.0)
     omniauth-oauth2 (1.2.0)
       faraday (>= 0.8, < 0.10)
       multi_json (~> 1.3)
@@ -220,6 +232,7 @@ DEPENDENCIES
   less-rails-bootstrap
   omniauth
   omniauth-facebook
+  omniauth-twitter!
   pg
   protected_attributes
   rails (= 4.1.1)

@@ -15,17 +15,17 @@ class Appmailer < ActionMailer::Base
 
 def invite(u)
   @user = u
- mail(to: @user.email, subject: 'Create you life at pandsoft')
+ mail(to: @user.email, subject: 'Create your life at pandsoft')
  
 end
 def invitep(u)
   @user = u
- mail(to: @user.email, subject: 'Add you Phase of life')
+ mail(to: @user.email, subject: 'Add your Phase of life')
  
 end
 def invites(u)
   @user = u
- mail(to: @user.email, subject: 'Add you private story')
+ mail(to: @user.email, subject: 'Add your private story')
  
 end
 
