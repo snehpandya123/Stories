@@ -18,7 +18,8 @@
                    <% if user_signed_in? %>
                    <h3>Welcome <%= current_user.email %></h3>
                    <p>
-                    <h3> Tell us about your <%= link_to "Life" , folders_path %> or  <%= link_to "Read", users_home_path %> about others...</h3>
+                    <h3> Tell us about your <%= link_to "Life" , folders_path %> or  <%= link_to "Read", users_home_path , :method => :get %> 
+                    about others...</h3>
                    </p>
                    <% else %>
                    

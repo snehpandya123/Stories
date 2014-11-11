@@ -8,5 +8,17 @@ class Story < ActiveRecord::Base
 			  :length => { :within => 1..50 }
 	validates :describtion, :presence => true
 				
-			  
+searchable do
+  text :heading, :boost => 5
+  text :describtion, :publish_month
+  text :comments do
+    comments.map(&:content)
+  end
+  time :created_at
+  string :publish_month
+end
+
+def publish_month
+  created_at.strftime("%B %Y")
+end
 end

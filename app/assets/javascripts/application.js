@@ -18,6 +18,13 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
+$(document).ready(function(){
+  $("#facets").hide();
+  $("button").click(function(){
+    $("#facets").slideToggle();
+  });
+});
+
 $(document).on("ready page:change", function() {
     $('.tag-tooltip').tooltip();
 });

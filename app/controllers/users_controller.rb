@@ -12,7 +12,17 @@ class UsersController < ApplicationController
   	
   end
   def home
-  	 @stories = Story.order('created_at desc').page(params[:page])
+   
+     @search = Story.search do
+      fulltext params[:search]
+    with(:created_at).less_than(Time.zone.now)
+    order_by :created_at, :desc
+    paginate :page => params[:page], :per_page => 10
+    facet(:publish_month)
+    with(:publish_month, params[:month]) if params[:month].present?
+  end
+  @stories = @search.results
+  	
     
  
  

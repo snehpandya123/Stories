@@ -51,7 +51,6 @@ GEM
     bcrypt (3.1.7)
     bcrypt (3.1.7-x86-mingw32)
     builder (3.2.2)
-    cancan (1.6.10)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
       railties (>= 4.0.0, < 5.0)
@@ -72,6 +71,7 @@ GEM
       multipart-post (>= 1.2, < 3)
     ffi (1.9.5-x86-mingw32)
     hashie (3.3.1)
+    highline (1.6.21)
     hike (1.2.3)
     i18n (0.6.11)
     jbuilder (2.1.3)
@@ -102,11 +102,16 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.1)
     minitest (5.4.2)
     multi_json (1.10.1)
     multi_xml (0.5.5)
     multipart-post (2.0.0)
     netrc (0.7.7)
+    nokogiri (1.6.4.1)
+      mini_portile (~> 0.6.0)
+    nokogiri (1.6.4.1-x86-mingw32)
+      mini_portile (~> 0.6.0)
     oauth (0.4.7)
     oauth2 (1.0.0)
       faraday (>= 0.8, < 0.10)
@@ -127,10 +132,15 @@ GEM
       multi_json (~> 1.3)
       oauth2 (~> 1.0)
       omniauth (~> 1.2)
+    options (2.3.2)
     orm_adapter (0.5.0)
     pg (0.17.1)
     pg (0.17.1-x86-mingw32)
     polyglot (0.3.5)
+    pr_geohash (1.0.0)
+    progress_bar (1.0.3)
+      highline (~> 1.6.1)
+      options (~> 2.3.0)
     protected_attributes (1.0.8)
       activemodel (>= 4.0.1, < 5.0)
     rack (1.5.2)
@@ -167,6 +177,8 @@ GEM
       ffi (~> 1.9)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
+    rsolr (1.0.10)
+      builder (>= 2.1.2)
     sass (3.2.19)
     sass-rails (4.0.3)
       railties (>= 4.0.0, < 5.0)
@@ -188,6 +200,14 @@ GEM
       actionpack (>= 3.0)
       activesupport (>= 3.0)
       sprockets (~> 2.8)
+    sunspot (2.1.1)
+      pr_geohash (~> 1.0)
+      rsolr (~> 1.0.7)
+    sunspot_rails (2.1.1)
+      nokogiri
+      rails (>= 3)
+      sunspot (= 2.1.1)
+    sunspot_solr (2.1.1)
     therubyracer (0.12.1)
       libv8 (~> 3.16.14.0)
       ref
@@ -221,7 +241,6 @@ PLATFORMS
 DEPENDENCIES
   activerecord-reputation-system
   acts_as_votable (~> 0.10.0)
-  cancan
   coffee-rails (~> 4.0.0)
   devise
   jbuilder (~> 2.0)
@@ -234,6 +253,7 @@ DEPENDENCIES
   omniauth-facebook
   omniauth-twitter!
   pg
+  progress_bar
   protected_attributes
   rails (= 4.1.1)
   rails_12factor
@@ -241,6 +261,8 @@ DEPENDENCIES
   sdoc (~> 0.4.0)
   social-share-button
   stripe!
+  sunspot_rails
+  sunspot_solr
   therubyracer
   turbolinks
   twitter-bootstrap-rails

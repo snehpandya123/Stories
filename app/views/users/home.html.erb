@@ -21,7 +21,46 @@
         <% end %>
       <% end %> 
     <% end %>
-                <div class="container">
+
+<div class="container">
+<div style="margin-top: 50px;">
+  <%= form_tag users_home_path, :method => :get do %>
+  <p>
+  
+<div class="input-group custom-search-form">
+             <%= text_field_tag :search, params[:search] , :class => "form-control" , :placeholder => "Search of stories"  %>
+              <span class="input-group-btn">
+              
+    <%= submit_tag "Search", :name => nil , :class => "btn btn-info" %>
+              <span class="fa fa-search"></span>
+             </button>
+             </span>
+             </div>
+    
+
+    
+  </p>
+<% end %>
+<button class= "btn btn-primary">Search by month..</button>
+</div>
+<div id="facets" class="well">
+  <h3>Month</h3>
+  <ul>
+    <% for row in @search.facet(:publish_month).rows %>
+      <li>
+        <% if params[:month].blank? %>
+          <%= link_to row.value, :month => row.value %> (<%= row.count %>)
+        <% else %>
+          <strong><%= row.value %></strong> (<%= link_to "back", :month => nil %>)
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+
+
+
+
                     <div class = "story">
                       <div class = "stories">
                         <%= render "stories" %>
@@ -30,7 +69,7 @@
                 </div>
            
              <center>
-              <%= paginate @stories%>
+              <%= paginate @search.hits %>
             </center>
    
             

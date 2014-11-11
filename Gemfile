@@ -18,7 +18,9 @@ gem "kaminari"
 gem 'twitter-bootstrap-rails'
 gem 'social-share-button'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'cancan'
+gem 'sunspot_rails'
+gem 'sunspot_solr'
+gem 'progress_bar'
 
 
 gem 'activerecord-reputation-system', :require => 'reputation_system'
