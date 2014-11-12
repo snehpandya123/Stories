@@ -18,6 +18,13 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
+$(window).bind('scroll', function () {
+    if ($(window).scrollTop() > 20) {
+        $('.menu').addClass('fixed');
+    } else {
+        $('.menu').removeClass('fixed');
+    }
+});
 $(document).ready(function(){
   $("#facets").hide();
   $("button").click(function(){

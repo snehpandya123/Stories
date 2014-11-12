@@ -14,7 +14,9 @@
 
 
  <div class="container">
+  <% if @phase.stories.count < 9 %>
    <div class="span8 well">
+
      <%= form_for @story, :html => { :class => "form-horizontal story" } do |f| %>
 
     <% if @story.errors.any? %>
@@ -58,6 +60,12 @@
   <%= f.submit nil, :class => 'btn btn-primary' %>
  
 
+<% end %>
+<% else %>
+ <div class="alert alert-warning alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                <strong>Sorry</strong> You Can only add 9 stories in specific phase.
+            </div>
 <% end %>
    </div>
  </div>

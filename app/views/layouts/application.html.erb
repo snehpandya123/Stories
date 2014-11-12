@@ -38,6 +38,24 @@
                 <li><%= link_to "My Life" , folders_path %></li>
                
                 <li><%= link_to "Contribute" , new_charge_path , :method => :get %></li>
+                <li><%= form_tag users_home_path, :method => :get do %>
+  <p>
+  
+<div class="input-group custom-search-form">
+             <%= text_field_tag :search, params[:search] , :class => "form-control" , :placeholder => "Search of stories"  %>
+              <span class="input-group-btn">
+              
+    <%= submit_tag "Search", :name => nil , :class => "btn btn-info" %>
+              <span class="fa fa-search"></span>
+             
+             </span>
+             </div>
+    
+
+    
+  </p>
+<% end %></li>
+<li></li>
                 <% end %>
                 
                 

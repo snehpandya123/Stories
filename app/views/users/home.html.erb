@@ -1,4 +1,4 @@
-<div class="main-header1">
+<div class="">
     
     <% if current_user.folders.empty? %>  
         <%= render "folder" %>
@@ -23,26 +23,10 @@
     <% end %>
 
 <div class="container">
-<div style="margin-top: 50px;">
-  <%= form_tag users_home_path, :method => :get do %>
-  <p>
-  
-<div class="input-group custom-search-form">
-             <%= text_field_tag :search, params[:search] , :class => "form-control" , :placeholder => "Search of stories"  %>
-              <span class="input-group-btn">
-              
-    <%= submit_tag "Search", :name => nil , :class => "btn btn-info" %>
-              <span class="fa fa-search"></span>
-             </button>
-             </span>
-             </div>
-    
 
-    
-  </p>
-<% end %>
+  
+
 <button class= "btn btn-primary">Search by month..</button>
-</div>
 <div id="facets" class="well">
   <h3>Month</h3>
   <ul>
