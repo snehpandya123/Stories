@@ -12,11 +12,6 @@
 
 </head>
 <body>
-
-<h1><%= request.remote_ip %></h1>
-<h1><%= request.ip %></h1>
-<h1><%= result.latitude %></h1>
-
 <div class="navbar-wrapper">
   
 
