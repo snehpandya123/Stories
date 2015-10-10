@@ -13,7 +13,7 @@ gem 'rails_12factor', group: :production
 
 gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
-gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
+
 gem "kaminari"
 gem 'twitter-bootstrap-rails'
 gem 'social-share-button'
@@ -50,7 +50,7 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 # gem 'capistrano-rails', group: :development
 
 # Use debugger
-# gem 'debugger', group: [:development, :test]
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]

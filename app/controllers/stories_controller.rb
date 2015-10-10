@@ -4,8 +4,11 @@ class StoriesController < ApplicationController
   # GET /stories
   # GET /stories.json
   def index
+    
      @folders =  Folder.where(user_id: "#{current_user.id}")
-     @stories = Story.all
+    
+     @stories = Story.order(:heading).page(params[:page]).per(15)
+  
   end
 
   # GET /stories/1
