@@ -12,8 +12,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable ,:confirmable, :lockable, :timeoutable, :omniauthable  ,:omniauth_providers => [:facebook]
 
-         attr_accessible :email, :password, :password_confirmation
-
     def self.find_for_facebook_oauth(auth, signed_in_resource=nil)
       user = User.where(:provider => auth.provider, :uid => auth.uid).first
         if user
@@ -51,6 +49,10 @@ class User < ActiveRecord::Base
               end 
             end
         end
+
+        def self.search(search)
+  where("LOWER(heading) LIKE ?", "%#{search.downcase}%") 
+end
 
 def voted_for?(story)
   evaluations.where(target_type: story.class, target_id: story.id).present?

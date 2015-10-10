@@ -10,7 +10,7 @@ gem 'omniauth'
 gem 'omniauth-facebook'
 gem 'omniauth-twitter', :github => 'arunagw/omniauth-twitter'
 gem 'rails_12factor', group: :production
-gem 'protected_attributes'
+
 gem 'jquery-turbolinks'
 gem 'jquery-ui-rails'
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
@@ -18,12 +18,8 @@ gem "kaminari"
 gem 'twitter-bootstrap-rails'
 gem 'social-share-button'
 gem 'acts_as_votable', '~> 0.10.0'
-gem 'sunspot_rails'
-gem 'sunspot_solr'
 gem 'progress_bar'
 gem 'geocoder'
-
-
 gem 'activerecord-reputation-system', :require => 'reputation_system'
 # Use SCSS for stylesheets
 gem 'less-rails-bootstrap'

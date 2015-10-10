@@ -1,35 +1,16 @@
-<div class="main-header1">
-<div class="container">
-    
-    <div class="row">
-      <div class="col-xs-12 col-sm-offset-2 col-sm-8">
-        <ul class="event-list">
-          <li>
-            <time datetime="2014-07-20">
-              <span class="day"><%= @story.created_at.strftime('%d') %></span>
-              <span class="month"><%= @story.created_at.strftime('%b') %></span>
-              <span class="year"><%= @story.created_at.strftime('%y') %></span>
-              <span class="time">ALL DAY</span>
-            </time>
-           
-            <div class="info">
-             <center><h2 class="title"><u><%= @story.heading.capitalize %>..!!</u></h2></center> 
-              
-            </div>
-            
-          </li>
-        </ul>
-      </div>
-      </div>
-      <div class="row">
-       
-      
-        <div class="well">
-     
 
+<div class="container">
+  <div class="container">
+    <div class="row">
       <div class="row">
-        <div class="col-md-3">
-            <div class="list-group">
+        <div class="col-md-12">
+          <div class="box">
+            <div class="box-content">
+              <center><h1 class="tag-title"><%= @story.heading.capitalize %>..!!</h1></center>
+              <hr>
+          <div class="row">
+            <div class="col-md-3">
+              <div class="list-group">
                 <a href="" class="list-group-item visitor">
                     <h3 class="pull-right">
                         <i class="fa fa-eye"></i>
@@ -66,30 +47,36 @@
                      
                      <p id='votes'>
 
-         <%= pluralize @story.reputation_for(:votes).to_i, "Appreciations" %></p>
+                      <%= pluralize @story.reputation_for(:votes).to_i, "Appreciations" %></p>
                         <h4><%= link_to '<i class="fa fa-thumbs-up"></i>
 '.html_safe, vote_story_path(@story, type: "up"), method: :post , remote: true , :class => "btn btn-sm btn-hover btn-success"%>
-      <%= link_to '<i class="fa fa-thumbs-down"></i>'.html_safe, vote_story_path(@story , type: "down"), method: :post,remote: true , :class => "btn btn-sm btn-hover btn-danger" %></h4>
+                        <%= link_to '<i class="fa fa-thumbs-down"></i>
+'.html_safe, vote_story_path(@story, type: "down"), method: :post , remote: true , :class => "btn btn-sm btn-hover btn-danger"%>
                     </h4>
                     <h4 class="list-group-item-heading count">
                       </h4>
                     <p class="list-group-item-text">
-                      </p>
+                    </p>
                 </b>
-                <%  end %>
+                
             </div>
-          
+          <%  end %>
         </div>
        
-    </div>
-        <h1><%= simple_format("#{@story.describtion.capitalize }") %></h1>
-           
-            
-           
-      </div> 
-                <%= social_share_button_tag("#{@story.heading}" , :url => "http://www.pandsoft.com/stories/#{@story.id}") %>  
-            
-            </div>
+    </div><hr>
+                            <h4> <%= @story.describtion.capitalize %>
+                            </h4>
+                            <hr>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                
+            </div>           
+        </div>
+  </div>
+
              <div class="well">    
    <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
@@ -122,6 +109,5 @@
   </div>    
 
 </div>
-
 
 </div>

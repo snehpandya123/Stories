@@ -9,73 +9,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script src="http://mymaplist.com/js/vendor/TweenLite.min.js"></script>
   <%= csrf_meta_tags %>
-
 </head>
 <body>
-
-
-<div class="navbar-wrapper">
-  
-
-        <div class="navbar navbar-defaultt navbar-fixed-top" role="navigation">
-          <div class="container">
-            <div class="navbar-header">
-              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-              </button>
-              <%= link_to "PandSoft" , users_dashboard_path , method: :get, :class => "navbar-brand" %>
-            
-            </div>
+   <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+     <div class="container">
+       <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+           </button>
+          <%= link_to "PandSoft" , users_dashboard_path , method: :get, :class => "navbar-brand" %>
+        </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 
                 <% if signed_in? %>
                 <li><%= link_to "Stories" , users_home_path , method: :get  %></li>
                 <li><%= link_to "My Life" , folders_path %></li>
-               
-                <li><%= link_to "Contribute" , new_charge_path , :method => :get %></li>
-                <li><%= form_tag users_home_path, :method => :get do %>
-  <p>
-  
-<div class="input-group custom-search-form">
-             <%= text_field_tag :search, params[:search] , :class => "form-control" , :placeholder => "Search of stories"  %>
-          
-              <span class="input-group-btn">
-               <button class="btn btn-default" type="button">
-              <span class="fa fa-search"></span>
-             </button>
-              
+                <li>
+                <div class="col-sm-5 col-md-5">
+                  <%= form_tag users_home_path, :method => 'get' ,:class =>"navbar-form"  do %>
+                  <p> 
+                    <div class="input-group">
+                        <%= text_field_tag :search, params[:search], placeholder: "Search stories",:class=>"form-control" , :size => "70"%>
+                    <div class="input-group-btn">
+                          <%= submit_tag "Search", :name => nil ,:class => "btn btn-success" ,:size=> "10" %>
+                    </div>
+                    </div>
+                  </p>
+                  <% end %>
+                </div>
+                </li>
+        <% end %>
              
+        </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <% if signed_in? %>
+          <li><%= link_to "SignOut" ,destroy_user_session_path , :method=>:delete %>
+          </li>
+        
+        <% else %>
             
-             </span>
-
-             </div>
-    
-
-    
-  </p>
-<% end %></li>
-<li></li>
-                <% end %>
-                
-                
-
-              </ul>
-               <ul class="nav navbar-nav navbar-right">
-                <% if signed_in? %>
-
-                <li><%= link_to "signout" ,destroy_user_session_path , :method=>:delete , :class => "btn btn-warning"%></li>
-                <% else %>
-               <!-- <li><%= link_to "Sign Up", new_user_registration_path , :class => "btn btn-default" %></li>
-                <li><%= link_to "Sign In", new_user_session_path , :class => "btn btn-default"%></li>-->
-                <% end %>
+          <li><%= link_to "Register", new_user_registration_path  %></li>
+          <li><%= link_to "Sign In", new_user_session_path%></li>
+        
+        <% end %>
                   
-                </ul>
-            </div>
-          </div>
+      </ul>
+    </div>
+  </div>
       
 
       </div>
@@ -102,7 +86,7 @@
             </ul>
         </div>
     </div>
-</div>
+
       <p class="pull-right"><a id="back-to-top" href="#" class="btn btn-primary btn-lg back-to-top" role="button" title="Click to return on the top page" data-toggle="tooltip" data-placement="left"><span class="fa fa-chevron-up"></span></a>
       </p>
 <table>

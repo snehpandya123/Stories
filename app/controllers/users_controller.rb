@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
+  
    before_filter :login_required, only: [:show, :new, :edit, :update, :destroy , :home ]
+  
   def dashboard
     @folders = Folder.all
     @phase = Phase.all
@@ -9,31 +11,25 @@ class UsersController < ApplicationController
     @user = User.new
     @userss = @users.count
     @vote = Story.order("created_at desc").limit(4)
-  	
   end
+  
   def home
-   
-         @search = Story.search do
-        fulltext params[:search]
-        with(:created_at).less_than(Time.zone.now)
-        order_by :created_at, :desc
-        paginate :page => params[:page], :per_page => 25
-        facet(:publish_month)
-        with(:publish_month, params[:month]) if params[:month].present?
+    if (params[:seach]).present? 
+      @stories = Story.search(params[:search])
+  	else
+      @stories = Story.all
+    end
   end
-  @stories = @search.results
-  	
-    
- 
- 
-  end
+  
   def myphase
   	@folders =  Folder.where(user_id: "#{current_user.id}")
   	
   end
+  
   def mystories
   	@folders =  Folder.where(user_id: "#{current_user.id}")
   end
+  
   def invite
      @user = User.all
         @user.each do |u|

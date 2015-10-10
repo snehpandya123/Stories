@@ -5,13 +5,7 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
      @folders =  Folder.where(user_id: "#{current_user.id}")
-  @search = Story.search do
-    fulltext params[:search]
-    with(:created_at).less_than(Time.zone.now)
-    facet(:publish_month)
-    with(:publish_month, params[:month]) if params[:month].present?
-  end
-  @stories = @search.results
+  @stories = Story.all
   end
 
   # GET /stories/1

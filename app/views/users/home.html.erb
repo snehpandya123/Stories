@@ -1,66 +1,11 @@
-<div class="">
-    
-    <% if current_user.folders.empty? %>  
-        <%= render "folder" %>
-    <% else %>
-    
-    <% current_user.folders.each do |f| %>
-          <% if f.phases.empty? %>
-          
-          <%= render "phase" %>
-      
-          <% else %>
-            
-          <% f.phases.each do|s| %>
-              
-              <% if s.stories.empty? %>
-                  <%= render "story" %>
-             <% end %>
-
-           <% end %>
-        <% end %>
-      <% end %> 
-    <% end %>
-
 <div class="container">
-
-  
-
-<!-- <button class= "btn btn-primary">Search by month..</button>
-<div id="facets" class="well">
-  <h3>Month</h3>
-  <ul>
-    <% for row in @search.facet(:publish_month).rows %>
-      <li>
-        <% if params[:month].blank? %>
-          <%= link_to row.value, :month => row.value %> (<%= row.count %>)
-        <% else %>
-          <strong><%= row.value %></strong> (<%= link_to "back", :month => nil %>)
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
+	<div class = "story">
+    	<div class = "stories">
+         	<%= render "stories" %>
+       </div>
+   </div>
 </div>
--->
-
-
-
-
-                    <div class = "story">
-                      <div class = "stories">
-                        <%= render "stories" %>
-                     </div>
-                    </div>
-                </div>
-           
-             <center>
-              <%= paginate @search.hits %>
-            </center>
-   
-            
-       
-</div>
-        
+              
  
      
 <!-- Modal -->
