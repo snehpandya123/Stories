@@ -33,7 +33,7 @@ class UsersController < ApplicationController
         @user.each do |u|
             unless u.folder.present?
                 Appmailer.invite(u).deliver
-            end  
+            else  
                 
                     if u.folder.phases.empty?
                         Appmailer.invitep(u).deliver
@@ -46,6 +46,7 @@ class UsersController < ApplicationController
                  
                 end
           end
+        end
   end  
   def all
       @user = User.all
