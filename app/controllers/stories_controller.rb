@@ -5,7 +5,7 @@ class StoriesController < ApplicationController
   # GET /stories.json
   def index
      @folders =  Folder.where(user_id: "#{current_user.id}")
-  @stories = Story.all
+     @stories = Story.all
   end
 
   # GET /stories/1

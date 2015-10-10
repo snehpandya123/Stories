@@ -26,7 +26,7 @@
               <ul class="nav navbar-nav">
                 
                 <% if signed_in? %>
-                <li><%= link_to "Stories" , users_home_path , method: :get  %></li>
+                <li><%= link_to "Stories" , stories_path , method: :get  %></li>
                 <li><%= link_to "My Life" , folders_path %></li>
                 <li>
                 <div class="col-sm-5 col-md-5">

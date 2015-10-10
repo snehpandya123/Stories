@@ -14,11 +14,9 @@ class UsersController < ApplicationController
   end
   
   def home
-    if (params[:seach]).present? 
+    
       @stories = Story.search(params[:search])
-  	else
-      @stories = Story.all
-    end
+
   end
   
   def myphase
