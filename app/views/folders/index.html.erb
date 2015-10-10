@@ -141,7 +141,7 @@
         
           <div class="offer-content">
             <h3 class="lead">
-              <%= s.heading.truncate(6) %>
+              <%=link_to s.heading.truncate(6), s %>
             </h3>
             <p>
               <%= link_to t('.edit', :default => t("helpers.links.edit")),

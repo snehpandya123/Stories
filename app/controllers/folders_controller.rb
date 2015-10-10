@@ -36,6 +36,9 @@ class FoldersController < ApplicationController
     @folder = Folder.new(folder_params)
 
     respond_to do |format|
+      if current_user.folder.present?
+        flash[:danger] = 'You have already created your life'
+      else
       if @folder.save
         flash[:success] = 'Life was successfully created.'
         format.html { redirect_to folders_path }
@@ -44,6 +47,7 @@ class FoldersController < ApplicationController
         format.html { render :new }
         format.json { render json: @folder.errors, status: :unprocessable_entity }
       end
+    end
     end
   end
 

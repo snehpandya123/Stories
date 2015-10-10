@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
    acts_as_voter
   has_reputation :votes, source: {reputation: :votes, of: :stories}, aggregated_by: :sum
   
-  has_many :folders
+  has_one :folder
   has_many :phases, through: :folders
   has_many :stories, through: :phases
   has_many :comments , through: :stories

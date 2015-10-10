@@ -18,19 +18,6 @@
 //= require social-share-button
 //= require turbolinks
 //= require_tree .
-$(window).bind('scroll', function () {
-    if ($(window).scrollTop() > 20) {
-        $('.menu').addClass('fixed');
-    } else {
-        $('.menu').removeClass('fixed');
-    }
-});
-$(document).ready(function(){
-  $("#facets").hide();
-  $("button").click(function(){
-    $("#facets").slideToggle();
-  });
-});
 
 $(document).on("ready page:change", function() {
     $('.tag-tooltip').tooltip();
@@ -52,39 +39,9 @@ $(document).ready(function() {
 })
 
 
-$(document).ready(function(){
-    $('#quantity').focusout(calculate);
-    
-    
-});
-function calculate(e)
-{
-   ans = $('#quantity').val() * 100;
-   $('#cents').val(ans )
-   $('#pay').val($('#quantity').val())
-}
- $(document).ready(function () {
-  //called when key is pressed in textbox
-  $("#quantity").keypress(function (e) {
-     //if the letter is not digit then display error and don't type anything
-     if (e.which != 8 && e.which != 0 && (e.which < 48 || e.which > 57)) {
-        //display error message
-        $("#errmsg").html("Digits Only").show().fadeOut("slow");
-               return false;
-    }
-    else
-    {
-       $('#new').show();
-    }
-   
-   });
-});
 
-$(document).ready(function () {
 
-    $(".player").mb_YTPlayer();
 
-});
 $(document).ready(function(){
      $(window).scroll(function () {
             if ($(this).scrollTop() > 50) {
