@@ -31,18 +31,19 @@ class UsersController < ApplicationController
   def invite
      @user = User.all
         @user.each do |u|
-            if u.folders.empty?
+            unless u.folder.present?
                 Appmailer.invite(u).deliver
             end  
-                u.folders.each do |p|
-                    if p.phases.empty?
+                
+                    if u.folder.phases.empty?
                         Appmailer.invitep(u).deliver
                     end
-                p.phases.each do |s|
+              
+                u.folder.phases.each do |s|
                       if s.stories.empty?
                         Appmailer.invites(u).deliver
                       end
-                  end 
+                 
                 end
           end
   end  
